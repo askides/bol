@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { Accordion } from "./components/Accordion";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ padding: 30 }}>
+      <h1 style={{ margin: 0 }}>Accordion Component</h1>
+      <h2>Made with React using Compound Components Pattern</h2>
+      <Accordion defaults={[1, 2]} multiple={true}>
+        <Accordion.Item>
+          <Accordion.Button
+            onClick={() => console.log("Clicked Primo Accordion")}
+          >
+            Pokemon
+          </Accordion.Button>
+          <Accordion.Panel>Pikachy, Mew, Charizard, Mewtwo</Accordion.Panel>
+        </Accordion.Item>
+        <Accordion.Item>
+          <Accordion.Button>Digimon</Accordion.Button>
+          <Accordion.Panel>Agumon, Babydmon, Bakomon</Accordion.Panel>
+        </Accordion.Item>
+        <Accordion.Item>
+          <Accordion.Button>Dragonball</Accordion.Button>
+          <Accordion.Panel>Goku, Vegeta, Gogeta, Majin Bu</Accordion.Panel>
+        </Accordion.Item>
+      </Accordion>
     </div>
   );
 }
