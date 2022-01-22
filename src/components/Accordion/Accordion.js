@@ -6,9 +6,9 @@ import { AccordionPanel } from "./AccordionPanel";
 
 export function Accordion({ children, ...props }) {
   return (
-    <div>
+    <ul>
       <AccordionProvider {...props}>{children}</AccordionProvider>
-    </div>
+    </ul>
   );
 }
 

@@ -8,7 +8,15 @@ export function AccordionPanel({ children }) {
   const { index } = useAccordionItem();
 
   if (items[index]) {
-    return <div>{children}</div>;
+    return (
+      <div
+        role="region"
+        id={`${index}-section`}
+        aria-labelledby={`${index}-id`}
+      >
+        {children}
+      </div>
+    );
   }
 
   return null;

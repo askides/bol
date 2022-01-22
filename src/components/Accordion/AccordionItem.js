@@ -1,11 +1,9 @@
 import { AccordionItemProvider } from "./AccordionItemContext";
 
-export function AccordionItem(props) {
-  const { index } = props;
-
+export function AccordionItem({ children, index }) {
   return (
     <AccordionItemProvider index={index}>
-      <div>{props.children}</div>
+      <li>{children}</li>
     </AccordionItemProvider>
   );
 }

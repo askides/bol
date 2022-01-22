@@ -27,6 +27,10 @@ export function AccordionProvider({
   multiple = false,
   ...props
 }) {
+  if (React.Children.count(children) === 0) {
+    throw new Error("You must provide at least one AccordionItem");
+  }
+
   const indexMaps = React.Children.map(children, (_, index) => {
     return { [index]: defaults.includes(index) ? true : false };
   });
